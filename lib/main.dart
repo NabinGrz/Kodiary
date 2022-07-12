@@ -1,7 +1,6 @@
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
-import 'package:kodiary/pages/companydetails.dart';
-import 'package:kodiary/pages/login.dart';
+import 'package:kodiary/pages/dropdown.dart';
 import 'package:kodiary/provider/kodiary-provider.dart';
 import 'package:kodiary/services/api.dart';
 import 'package:provider/provider.dart';
@@ -26,16 +25,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (context) {
-              return CompanyProvider();
-            },
-          )
-        ],
-        child: const LoginPage(
-          origin: "",
-        ));
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(
+        create: (context) {
+          return CompanyProvider();
+        },
+      )
+    ], child: const DropDownClass());
   }
 }
